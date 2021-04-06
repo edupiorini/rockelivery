@@ -6,7 +6,7 @@ defmodule Rockelivery.User do
 
   @primary_key {:id, :binary_id, autogenerate: true}
 
-  @required_params [:age, :adress, :email, :cep, :cpf, :password, :name]
+  @required_params [:age, :adress, :cep, :cpf, :email, :password, :name]
 
   schema "users" do
     field :age, :integer
@@ -14,9 +14,9 @@ defmodule Rockelivery.User do
     field :cep, :string
     field :cpf, :string
     field :email, :string
-    field :name, :string
     field :password, :string, virtual: true
     field :password_hash, :string
+    field :name, :string
 
     timestamps()
   end
