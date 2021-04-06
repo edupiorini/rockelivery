@@ -10,7 +10,7 @@ use Mix.Config
 config :rockelivery,
   ecto_repos: [Rockelivery.Repo]
 
-config :rockelivery, Rockelivry.Repo,
+config :rockelivery, Rockelivery.Repo,
   # configuração para gerar uuid nessas chaves
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
