@@ -9,7 +9,6 @@ defmodule RockeliveryWeb.Router do
     pipe_through :api
 
     get "/", WelcomeController, :index
-    #    rota controller          action
 
     resources "/users", UsersController, except: [:new, :edit]
   end
