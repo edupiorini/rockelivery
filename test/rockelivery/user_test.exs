@@ -4,17 +4,11 @@ defmodule Rockelivery.UserTest do
   alias Ecto.Changeset
   alias Rockelivery.User
 
+  import Rockelivery.Factory
+
   describe "changeset/2" do
     test "when all params are valid, returns a valid changeset" do
-      params = %{
-        age: 28,
-        adress: "rua de teste, 25",
-        cep: "12070350",
-        cpf: "37779593835",
-        email: "teste@teste.com",
-        password: "123456",
-        name: "Eduardo"
-      }
+      params = build(:user_params)
 
       response = User.changeset(params)
 
@@ -22,15 +16,7 @@ defmodule Rockelivery.UserTest do
     end
 
     test "when updating a changeset, returns a valid changeset with the given changes" do
-      params = %{
-        age: 28,
-        adress: "rua de teste, 25",
-        cep: "12070350",
-        cpf: "37779593835",
-        email: "teste@teste.com",
-        password: "123456",
-        name: "Eduardo"
-      }
+      params = build(:user_params)
 
       updated_params = %{
         password: "123456",
@@ -46,15 +32,7 @@ defmodule Rockelivery.UserTest do
     end
 
     test "when there are errors, returns an invalid changeset" do
-      params = %{
-        age: 15,
-        adress: "rua de teste, 25",
-        cep: "12070350",
-        cpf: "37779593835",
-        email: "teste@teste.com",
-        password: "123",
-        name: "Eduardo"
-      }
+      params = build(:user_params, %{age: 15, password: "123"})
 
       response = User.changeset(params)
 
