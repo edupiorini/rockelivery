@@ -1,11 +1,34 @@
 defmodule Rockelivery.ViaCep.Client do
+  @moduledoc """
+  A Client for obtaining CEP information through www.viacep.com.br API
+  """
   use Tesla
 
   alias Rockelivery.Error
+  alias Rockelivery.ViaCep.Behaviour
+
+  @behaviour Behaviour
 
   @base_url "https://viacep.com.br/ws/"
   plug Tesla.Middleware.JSON
 
+  @typedoc """
+  A String containing a valid CEP number  e.g 00000-000
+  """
+  @type cep :: String.t()
+
+  @spec get_cep_info(cep) :: {:ok, map()} | {:error, Error.t()}
+
+  @doc """
+  Returns CEP information given a valid `cep` number.
+
+  ## Testing
+    By default, it receives a base_url path for ViaCep API,
+    but when testing a `url` must be given for localhost simulation
+
+    e.g http://localhost:portnumber
+
+  """
   def get_cep_info(url \\ @base_url, cep) do
     "#{url}#{cep}/json/"
     |> get()
