@@ -19,8 +19,8 @@ defmodule Rockelivery.UserTest do
       params = build(:user_params)
 
       updated_params = %{
-        password: "123456",
-        name: "Duardo"
+        "password" => "123456",
+        "name" => "Duardo"
       }
 
       response =
@@ -32,7 +32,7 @@ defmodule Rockelivery.UserTest do
     end
 
     test "when there are errors, returns an invalid changeset" do
-      params = build(:user_params, %{age: 15, password: "123"})
+      params = build(:user_params, %{"age" => 15, "password" => "123"})
 
       response = User.changeset(params)
 
