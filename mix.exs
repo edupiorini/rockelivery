@@ -40,6 +40,7 @@ defmodule Rockelivery.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:guardian, "~> 2.0"},
       {:bypass, "~> 2.1", only: :test},
       {:phoenix, "~> 1.5.8"},
       {:phoenix_ecto, "~> 4.1"},
