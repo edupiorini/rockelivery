@@ -3,12 +3,14 @@ defmodule RockeliveryWeb.UsersView do
 
   alias Rockelivery.User
 
-  def render("create.json", %{user: %User{} = user}) do
+  def render("create.json", %{token: token, user: %User{} = user}) do
     %{
       message: "User created",
       # os campos vão ser repassados automaticamentes através do Jason.Encoder
-      user: user
+      user: user,
       # que adicionamos no nosso schema user
+
+      token: token
     }
   end
 
