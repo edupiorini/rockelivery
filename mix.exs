@@ -58,7 +58,6 @@ defmodule Rockelivery.MixProject do
       {:tesla, "~> 1.4.0"},
       {:hackney, "~> 1.17.0"},
       {:mox, "~> 1.0", only: :test}
-      # {:cowboy, "< 2.8.0", override: true}
     ]
   end
 
