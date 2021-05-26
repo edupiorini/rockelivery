@@ -18,6 +18,8 @@ defmodule RockeliveryWeb.Router do
     post "/items", ItemsController, :create
 
     post "/orders", OrdersController, :create
+
+    post "/users/signin", UsersController, :sign_in
   end
 
   # Enables LiveDashboard only for development
