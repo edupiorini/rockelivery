@@ -17,6 +17,10 @@ config :rockelivery, Rockelivery.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
 
+config :rockelivery, RockeliveryWeb.Auth.Pipeline,
+  module: RockeliveryWeb.Auth.Guardian,
+  error_handler: RockeliveryWeb.Auth.ErrorHandler
+
 config :rockelivery, RockeliveryWeb.Auth.Guardian,
   issuer: "rockelivery",
   secret_key: "oFREaOo1hroHOPeyj9si6MR7HmSxCmbxWDi5tpOTk0be4bZ4bNXNyu+Hy4rHgyiv"
