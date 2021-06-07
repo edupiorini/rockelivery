@@ -17,6 +17,7 @@ defmodule Rockelivery.Orders.Report do
           |> Stream.flat_map(fn chunk -> Repo.preload(chunk, :items) end)
           |> Enum.map(&parse_line/1)
         end,
+        # transaction time infinite instead of the 15sec default time
         timeout: :infinity
       )
 
