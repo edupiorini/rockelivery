@@ -3,13 +3,12 @@ defmodule Rockelivery.Repo.Migrations.CreateItensTable do
 
   def change do
     create table(:items) do
-      add :category, :item_category
-      add :description, :string
-      add :price, :decimal
-      add :photo, :string
+      add(:category, :item_category)
+      add(:description, :string)
+      add(:price, :decimal)
+      add(:photo, :string)
 
       timestamps()
     end
-
   end
 end
