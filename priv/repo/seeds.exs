@@ -14,7 +14,7 @@ alias Rockelivery.{Item, Order, Repo, User}
 
 user = %User{
   age: 27,
-  adress: "Rua das bananaeiras, 15"
+  adress: "Rua das bananaeiras, 15",
   cep: "12070350",
   cpf: "12345678900",
   email: "edutest@test.com",
@@ -24,20 +24,19 @@ user = %User{
 
 %User{id: user_id} = Repo.insert!(user)
 
-
 item1 = %Item{
   category: :food,
   description: "banana cozida",
   price: Decimal.new("10.50"),
   photo: "priv/photos/banan_cozida.jpg"
 }
+
 item2 = %Item{
   category: :food,
   description: "banana frita",
   price: Decimal.new("11.50"),
   photo: "priv/photos/banan_frita.jpg"
 }
-
 
 Repo.insert!(item1)
 Repo.insert!(item2)
