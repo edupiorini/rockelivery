@@ -18,7 +18,7 @@ user = %User{
   age: 27,
   adress: "Rua das bananaeiras, 15",
   cep: "12070350",
-  cpf: "12345678900",
+  cpf: "00123456789",
   email: "edutest@test.com",
   password: "123456",
   name: "Eduardo"
