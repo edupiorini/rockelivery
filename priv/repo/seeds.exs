@@ -52,7 +52,7 @@ order = %Order{
   items: [item1, item2],
   adress: "Rua das bananeiras, 15",
   comments: "sem canela",
-  payment_method: :debit
+  payment_method: :debit_card
 }
 
 Repo.insert!(order)
