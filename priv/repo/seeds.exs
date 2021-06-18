@@ -18,10 +18,10 @@ user = %User{
   age: 27,
   adress: "Rua das bananaeiras, 15",
   cep: "12070350",
-  cpf: "00123456789",
-  email: "edutest@test.com",
+  cpf: "01123456789",
+  email: "edutest2@test.com",
   password: "123456",
-  name: "Eduardo"
+  name: "Eduardo Teste"
 }
 
 %User{id: user_id} = Repo.insert!(user)
